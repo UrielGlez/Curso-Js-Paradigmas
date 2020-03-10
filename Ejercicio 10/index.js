@@ -3,6 +3,7 @@ ul = document.getElementById("lista");
 
 addElement = () => {
     var nombre = document.getElementById("first_name").value;
+    document.getElementById("first_name").value = "";
     ul.innerHTML = '';
     originalList.push(nombre);
     console.log(originalList);
