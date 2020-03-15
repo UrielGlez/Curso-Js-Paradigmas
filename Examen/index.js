@@ -1,13 +1,24 @@
-var liveTime;
-var isMarch = false;
-var controller;
-
 var button;
 var image;
 var initTime;
 var finalTime;
 var finalCost;
 const pricePerHour = 50;
+
+const buyProduct = (id, idProduct) => {
+    initState(id);
+    var product = document.getElementById(`product${idProduct}`).innerText;
+    var coste = finalCost.innerText;
+    product = product.substr(1, product.length);
+
+    finalCost.innerText = `$${updatePrice(product, coste)}`;
+}
+
+const updatePrice = (xPrice, totalCoste) => {
+    totalCoste = totalCoste.substr(1, totalCoste.length);
+    var finalPrice = parseFloat(xPrice) + parseFloat(totalCoste);
+    return finalPrice.toFixed(2); 
+}
 
 const start = (id) => {
     initState(id);
@@ -17,12 +28,10 @@ const start = (id) => {
         activeStyleChanges();
         timeInicial = new Date();
         initTime.innerHTML = getActualTime();
-        //startLiveTimeScreen();
     } else {
         inactiveStyleChanges();
         finalTime.innerHTML = getActualTime();
-        finalCost.innerHTML = `$${getCost()}`;
-        //stopLiveTimeScreen();
+        finalCost.innerHTML = `$${updatePrice(getCost(), finalCost.innerText)}`;  //`$${getCost()}`;   
     }
 }
 
@@ -43,7 +52,7 @@ const getCost = () => {
     difSec = (date2.getTime() - date1.getTime()) / 1000;
     var cost = (difSec * pricePerHour) / 3600;
 
-    return cost.toFixed(2);
+    return cost;
 }
 
 const getDateOf = (xTime) => {
@@ -95,27 +104,11 @@ const getActualTime = () => {
     var minute = time.getMinutes();
     var second = time.getSeconds();
 
-    amOrpm = (hour > 12) ? 'P.M' : 'A.M';
+    amOrpm = (hour >= 12) ? 'P.M' : 'A.M';
     hour = (hour > 12) ? hour - 12 : hour;
     hour = (hour < 10) ? '0' + hour : hour;
     minute = (minute < 10) ? '0' + minute : minute;
     second = (second < 10) ? '0' + second : second;
 
     return `${hour}:${minute}:${second} ${amOrpm}`;
-}
-
-const cronometro = () => {
-    timeActual = new Date();
-    acumularTime = timeActual - timeInicial;
-    acumularTime2 = new Date();
-    acumularTime2.setTime(acumularTime);
-    ss = acumularTime2.getSeconds();
-    mm = acumularTime2.getMinutes();
-    hh = acumularTime2.getHours() - 18;
-
-    if (ss < 10) ss = "0" + ss;
-    if (mm < 10) mm = "0" + mm;
-    if (hh < 10) hh = "0" + hh;
-
-    liveTime.innerHTML = hh + " : " + mm + " : " + ss;
 }

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="csi.js"></script>
 
 </head>
 
@@ -21,283 +22,25 @@
         <img class="righ" src="src/logo.PNG">
     </div>
     <div class="container section">
-        <div class="row c">
+        <div class="row">
             <!--MESA 1-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT1" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 1</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT1" onclick="start('1');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT1" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 1
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT1">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT1">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT1">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div data-include="poolT1.html"></div>
 
             <!--MESA 2-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT2" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 2</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT2" onclick="start('2');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT2" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 2
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT2">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT2">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT2">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <div data-include="poolT2.html"></div>
+            
             <!--MESA 3-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT3" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 3</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT3" onclick="start('3');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT3" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 3
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT3">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT3">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT3">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <div data-include="poolT3.html"></div>
+        </div>
+        <div class="row">
             <!--MESA 4-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT4" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 4</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT4" onclick="start('4');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT4" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 4
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT4">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT4">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT4">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div data-include="poolT4.html"></div>
 
             <!--MESA 5-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT5" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 5</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT5" onclick="start('5');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT5" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 5
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT5">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT5">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT5">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div data-include="poolT5.html"></div>
 
             <!--MESA 6-->
-            <div class="col s12 m4">
-                <div class="card hover-reveal">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img id="imageT6" class="activator" src="src/mesaOn2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator white-text">Mesa 6</span>
-                    </div>
-                    <div class="card-action section">
-                        <a id="btnT6" onclick="start('6');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
-                        <div id="liveTimeT6" class="right white-text">00 : 00 : 00</div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title black-text text-darken-4">
-                            Mesa 6
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <div>
-                            <table class="bordered highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Info</th>
-                                        <th>Time/Coste</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Start Time</td>
-                                        <td id="startTimeT6">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stop Time</td>
-                                        <td id="finalTimeT6">----</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL</td>
-                                        <td id="finalCostT6">$0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <div data-include="poolT6.html"></div>
         </div>
 
 
@@ -306,8 +49,8 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 grey-text">
-                        Uriel González | GitHub:
-                        <a href="https://github.com/UrielGlez">github.com/UrielGlez</a>
+                    Uriel González | GitHub:
+                    <a href="https://github.com/UrielGlez">github.com/UrielGlez</a>
                 </div>
             </div>
         </div>

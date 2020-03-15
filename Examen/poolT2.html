@@ -1,0 +1,82 @@
+<div class="col s12 m4">
+    <div class="card hover-reveal">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img id="imageT2" class="activator" src="src/mesaOn2.jpg">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator white-text">Mesa 2</span>
+        </div>
+        <div class="card-action section">
+            <a id="btnT2" onclick="start('2');" class="btn-flat" style="color: rgb(51, 255, 0);">START</a>
+            <div id="liveTimeT2" class="right grey-text"><i>50 per Hour</i></div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title black-text text-darken-4">
+                Mesa 2
+                <i class="material-icons right">close</i>
+            </span>
+            <h5>Bill</h5>
+            <div>
+                <table class="bordered highlight">
+                    <thead>
+                        <tr>
+                            <th>Info</th>
+                            <th>Time/Coste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Start Time</td>
+                            <td id="startTimeT2">----</td>
+                        </tr>
+                        <tr>
+                            <td>Stop Time</td>
+                            <td id="finalTimeT2">----</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td id="finalCostT2">$0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h5>Food</h5>
+            <div>
+                <table class="bordered highlight">
+                    <thead>
+                        <tr>
+                            <th>Info</th>
+                            <th>Time/Coste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="buyProduct('2', '1');">
+                            <td class="listFood">Hot Dogs</td>
+                            <td id="product1" class="listFood">$11</td>
+                        </tr>
+                        <tr onclick="buyProduct('2', '2');">
+                            <td class="listFood">Pizza</td>
+                            <td id="product2" class="listFood">$20</td>
+                        </tr>
+                        <tr onclick="buyProduct('2', '3');">
+                            <td class="listFood">Nachos</td>
+                            <td id="product3" class="listFood">$9</td>
+                        </tr>
+                        <tr onclick="buyProduct('2', '4');">
+                            <td class="listFood">Beer</td>
+                            <td id="product4" class="listFood">$6</td>
+                        </tr>
+                        <tr onclick="buyProduct('2', '5');">
+                            <td class="listFood">Soda</td>
+                            <td id="product5" class="listFood">$3</td>
+                        </tr>
+                        <tr onclick="buyProduct('2', '6');">
+                            <td class="listFood">Coffee</td>
+                            <td id="product6" class="listFood">$4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
