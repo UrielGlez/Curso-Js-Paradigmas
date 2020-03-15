@@ -83,21 +83,6 @@ const activeStyleChanges = () => {
     finalCost.innerHTML = "$0";
 }
 
-const stopLiveTimeScreen = () => {
-    if (isMarch == true) {
-        clearInterval(controller);
-        isMarch = false;
-    }
-}
-
-const startLiveTimeScreen = () => {
-    if (isMarch == false) {
-        timeInicial = new Date();
-        controller = setInterval(cronometro, 1000);
-        isMarch = true;
-    }
-}
-
 const getActualTime = () => {
     var time = new Date();
     var hour = time.getHours();
