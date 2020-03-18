@@ -4,21 +4,7 @@ var initTime;
 var finalTime;
 var finalCost;
 const pricePerHour = 50;
-
-const buyProduct = (id, idProduct) => {
-    initState(id);
-    var product = document.getElementById(`product${idProduct}`).innerText;
-    var coste = finalCost.innerText;
-    product = product.substr(1, product.length);
-
-    finalCost.innerText = `$${updatePrice(product, coste)}`;
-}
-
-const updatePrice = (xPrice, totalCoste) => {
-    totalCoste = totalCoste.substr(1, totalCoste.length);
-    var finalPrice = parseFloat(xPrice) + parseFloat(totalCoste);
-    return finalPrice.toFixed(2); 
-}
+const pricePerSec = pricePerHour / 3600;
 
 const start = (id) => {
     initState(id);
@@ -26,12 +12,12 @@ const start = (id) => {
 
     if (activeCard) {
         activeStyleChanges();
-        timeInicial = new Date();
+        var timeInicial = new Date();
         initTime.innerHTML = getActualTime();
+        setTimeout(updateLiveCoste, 1000, id);
     } else {
         inactiveStyleChanges();
         finalTime.innerHTML = getActualTime();
-        finalCost.innerHTML = `$${updatePrice(getCost(), finalCost.innerText)}`;  //`$${getCost()}`;   
     }
 }
 
@@ -44,15 +30,27 @@ const initState = (id) => {
     liveTime = document.getElementById(`liveTimeT${id}`);
 }
 
-const getCost = () => {
-    var date1 = getDateOf(initTime);
-    var date2 = getDateOf(finalTime);
+const buyProduct = (id, idProduct) => {
+    initState(id);
+    var product = document.getElementById(`product${idProduct}`).innerText;
+    var coste = finalCost.innerText;
+    product = product.substr(1, product.length);
 
-    var difSec = 0;
-    difSec = (date2.getTime() - date1.getTime()) / 1000;
-    var cost = (difSec * pricePerHour) / 3600;
+    finalCost.innerText = `$${updatePrice(product, coste)}`;
+}
 
-    return cost;
+const updateLiveCoste = (id) => {
+    if(document.getElementById(`btnT${id}`).innerHTML == "STOP") {
+        var finalC = document.getElementById(`finalCostT${id}`);
+        finalC.innerHTML = `$${updatePrice(pricePerSec, finalC.innerHTML)}`;
+        setTimeout(updateLiveCoste, 1000, id);
+    }
+}
+
+const updatePrice = (xPrice, totalCoste) => {
+    totalCoste = totalCoste.substr(1, totalCoste.length);
+    var finalPrice = parseFloat(xPrice) + parseFloat(totalCoste);
+    return finalPrice.toFixed(2); 
 }
 
 const getDateOf = (xTime) => {
