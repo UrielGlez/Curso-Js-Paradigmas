@@ -12,7 +12,6 @@ const start = (id) => {
 
     if (activeCard) {
         activeStyleChanges();
-        var timeInicial = new Date();
         initTime.innerHTML = getActualTime();
         setTimeout(updateLiveCoste, 1000, id);
     } else {
