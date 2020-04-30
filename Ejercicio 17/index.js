@@ -50,11 +50,14 @@ const repartirdor3 = new Promise((resolve, reject) => {
 })
 
 const pedirComida = async () => {
-    const pagar = pagarComida();
-    const enviar = enviarComida();
-    const proceso = Promise.all([pagar, enviar]);
-
-    return proceso;
+    try {
+        const pagar = pagarComida();
+        const enviar = enviarComida();
+        const proceso = await Promise.all([pagar, enviar]);
+        return proceso;
+    } catch (error) {
+        throw error;
+    }
 }
 
 pedirComida()
