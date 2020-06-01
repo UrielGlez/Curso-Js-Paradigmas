@@ -19,4 +19,4 @@ const Foco = (settings) => {
 
 }
 
-export default Foco
+export default Foco;
